@@ -1,6 +1,6 @@
 import csv
 
-filePath = "Instructions 4/PyBank/Resources/budget_data.csv"
+filePath = "Resources/budget_data.csv"
 
 numberOfMonths = []
 profitLoss = []
@@ -10,7 +10,7 @@ profitLossDifferences = []
 with open(filePath, "r", encoding = "UTF-8") as handler:
     csvreader = csv.reader(handler)
     next(csvreader)
-    
+
     # Create lists to contain all months and all profit/losses
     for row in csvreader:
         numberOfMonths.append(row[0])
@@ -45,3 +45,8 @@ f"\nGreatest Increase in Profits: {maxMonth} (${profitLossMax})"
 f"\nGreatest Decrease in Profits: {minMonth} (${profitLossMin})")
 
 print(analysis)
+
+txt_file_path = "Analysis/PyBank_Analysis.txt"
+
+with open(txt_file_path, 'w') as txt:
+    txt.write(analysis)
