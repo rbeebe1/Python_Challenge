@@ -6,11 +6,12 @@ numberOfMonths = []
 profitLoss = []
 profitLossDifferences = []
 
+# Open csv file
 with open(filePath, "r", encoding = "UTF-8") as handler:
     csvreader = csv.reader(handler)
     next(csvreader)
-
-
+    
+    # Create lists to contain all months and all profit/losses
     for row in csvreader:
         numberOfMonths.append(row[0])
         profitLoss.append(int(row[1]))
@@ -34,6 +35,7 @@ profitLossMin = min(profitLossDifferences)
 maxMonth = (numberOfMonths[profitLossDifferences.index(profitLossMax)  + 1])
 minMonth = (numberOfMonths[profitLossDifferences.index(profitLossMin)  + 1])
 
+# Print full analysis
 analysis = (f"Financial Analysis"
 "\n----------------------------"
 f"\nTotal Months: {monthCount}"
