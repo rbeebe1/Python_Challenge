@@ -25,6 +25,16 @@ with open(filePath, "r", encoding = "UTF-8") as handler:
 
     max_key = max(uniqueCandidates, key = uniqueCandidates.get)
 
+    print("Election Results"
+          "\n-------------------------"
+          f"\nTotal Votes: {totalVotes}"
+          "\n-------------------------")
+    for key,value in uniqueCandidates.items():
+        print(f"{key} : {round((value/totalVotes)*100, 3)}% ({value})")    
+    print("-------------------------"
+          f"\nWinner: {max_key}"
+          "\n-------------------------")
+
 txt_file_path = "Analysis/PyPoll_Analysis.txt"
 
 with open(txt_file_path, 'w') as txt:
