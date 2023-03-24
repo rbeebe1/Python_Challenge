@@ -1,3 +1,8 @@
+# This code will analyze profit/loss data over the period and will return
+# Total Months, Total Profits/Losses, Average Change in Profits/Losses
+# over the period, and the month with greatest increase and decrease in
+# profits
+
 import csv
 
 filePath = "Resources/budget_data.csv"
